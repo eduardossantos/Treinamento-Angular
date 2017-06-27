@@ -1,0 +1,33 @@
+<p>
+  Usando a <a href="{{ url }}">Interpolação</a>
+  
+</p>
+<p>Usando a interpolação com : <a href="{{getUrl()}}">método</a></p>
+<img src="{{ urlDaImagem }}">
+<img [src]="urlDaImagem">
+<div>
+  Selecione uma classe:
+  <select #classe (change)="0">
+    <option value="alert-success">Sucesso</option>
+    <option value="alert-info">Info</option>
+    <option value="alert-warning">Alert</option>
+    <option value="alert-danger">Erro</option>
+</select>
+<div class="alert " role="alert"
+[class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+<div class="alert " role="alert"
+[class.alert-info]="classe.value == 'alert-info'">Info</div>
+<div class="alert " role="alert"
+[class.alert-warning]="classe.value == 'alert-warning'">Alert</div>
+<div class="alert " role="alert"
+[class.alert-danger]="classe.value == 'alert-danger'">Erro</div>
+
+<div class="alert {{classe.value}}" role="alert"
+>Texto colorido conforme combobox</div>
+
+<div class="alert alert-danger" role="alert"
+[style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">Texto só aparece em caso de erro</div>
+
+    
+  
+</div>
