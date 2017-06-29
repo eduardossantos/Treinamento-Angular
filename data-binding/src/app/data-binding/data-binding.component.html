@@ -1,4 +1,4 @@
-<p>
+<!--<p>
   Usando a <a href="{{ url }}">Interpolação</a>
   
 </p>
@@ -30,4 +30,25 @@
 
     
   
-</div>
+</div>-->
+
+<article>
+  <h3>Event binding</h3>
+  <div>
+    <button (click)="botaoClidado()" class="btn btn-primary">Enviar</button>
+    <br><br>
+    <h1><p><span style="color:#1166e8">G</span><span style="color:#dd4b39">o</span><span style="color:#ffc113">o</span><span style="color:#1166e8">g</span><span style="color:#009c58">l</span><span style="color:red">e</span></p></h1>
+    <input type="text" 
+    (keyup)="onkeyUp($event)"
+    (keyup.enter)="salvarValor(campoInput.value)"
+    (blur)="salvarValor(campoInput.value)"
+    #campoInput/>
+
+    <p>Valor Atual: {{valorAtual}}</p>
+    <p>Valor Salvo: {{valorSalvo}}</p>
+    <span
+    (mouseover)="onMouseOverOut()"
+   (mouseout)="onMouseOverOut()" 
+   [class.highlight]="isMouseOver">Passe o mouse sobre mim</span>
+  </div>
+</article>
